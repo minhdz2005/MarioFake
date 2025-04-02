@@ -32,7 +32,7 @@ public class PlayerCollision : MonoBehaviour
             Destroy(collision.gameObject);
 
             // Nếu đang ở màn 1, chuyển sang màn 2
-            if (SceneManager.GetActiveScene().name == "Game") // Màn 1
+            if (SceneManager.GetActiveScene().name == "Level 1") // Màn 1
             {
                 SceneManager.LoadScene("Level 2"); // Chuyển sang màn 2
             }

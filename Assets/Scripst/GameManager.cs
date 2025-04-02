@@ -45,17 +45,7 @@ public class GameManager : MonoBehaviour
         isGameWin = true;
         Time.timeScale = 0;
         gameWinUI.SetActive(true);
-        SaveHighScore();  // Lưu điểm cao khi thắng
-    }
-    private void SaveHighScore()
-    {
-        int highScore = PlayerPrefs.GetInt("HighScore", 0);
-
-        if (score > highScore)
-        {
-            PlayerPrefs.SetInt("HighScore", score);
-            PlayerPrefs.Save(); // Lưu dữ liệu lại
-        }
+        
     }
     public void RestartGame()
     {
@@ -65,7 +55,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
 
         // Chỉ load lại màn 1 (Game) sau khi chơi lại
-        SceneManager.LoadScene("Game"); // Đảm bảo rằng tên Scene "Game" đúng với tên màn chơi đầu tiên
+        SceneManager.LoadScene("Level 1"); // Đảm bảo rằng tên Scene "Game" đúng với tên màn chơi đầu tiên
     }
     public void QuitGame()
     {
