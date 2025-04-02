@@ -18,6 +18,8 @@ public class PlayerCollision : MonoBehaviour
             Destroy(collision.gameObject);
             audioManager.PlayCoinSound();
             gameManager.AddScore(1);
+            // Thêm điểm vàng khi thu thập coin
+            gameManager.AddGold(1);
         }
         else if (collision.CompareTag("Trap"))
         {
@@ -50,5 +52,8 @@ public class PlayerCollision : MonoBehaviour
                 gameManager.GameWin(); // Win game và không chuyển scene nữa
             }
         }
+        // Lưu điểm vàng khi chuyển cảnh
+        PlayerPrefs.SetInt("PlayerGold", gameManager.GetGoldAmount());
+        PlayerPrefs.Save();
     }
 }

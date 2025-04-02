@@ -12,8 +12,8 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private GameManager gameManager;
     private AudioManager audioManager;
-  
 
+    
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -43,6 +43,7 @@ public class PlayerController : MonoBehaviour
     }
     public void Nhay()
     {
+        
         if (Input.GetButtonDown("Jump")&&isGrounded)
         {
             audioManager.PlayJumpSound();
