@@ -18,8 +18,6 @@ public class PlayerCollision : MonoBehaviour
             Destroy(collision.gameObject);
             audioManager.PlayCoinSound();
             gameManager.AddScore(1);
-            // Thêm điểm vàng khi thu thập coin
-            gameManager.AddGold(1);
         }
         else if (collision.CompareTag("Trap"))
         {
@@ -34,7 +32,7 @@ public class PlayerCollision : MonoBehaviour
             Destroy(collision.gameObject);
 
             // Nếu đang ở màn 1, chuyển sang màn 2
-            if (SceneManager.GetActiveScene().name == "Level 1") // Màn 1
+            if (SceneManager.GetActiveScene().name == "Game") // Màn 1
             {
                 SceneManager.LoadScene("Level 2"); // Chuyển sang màn 2
             }
@@ -52,8 +50,5 @@ public class PlayerCollision : MonoBehaviour
                 gameManager.GameWin(); // Win game và không chuyển scene nữa
             }
         }
-        // Lưu điểm vàng khi chuyển cảnh
-        PlayerPrefs.SetInt("PlayerGold", gameManager.GetGoldAmount());
-        PlayerPrefs.Save();
     }
 }
