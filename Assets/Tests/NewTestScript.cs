@@ -2,11 +2,13 @@
 using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
+using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
-public class NewTestScript
+public class NewTestScript : InputTestFixture
 {
-   
-
+    
     [Test]
     public void CharacterMovesLeft()
     {
@@ -65,4 +67,6 @@ public class NewTestScript
         // Use yield to skip a frame.
         yield return null;
     }
+    
+    
 }
