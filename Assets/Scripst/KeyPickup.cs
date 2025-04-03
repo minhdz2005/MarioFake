@@ -7,7 +7,7 @@ public class KeyPickup : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            SceneManager.LoadScene("Level 4"); // Chuyển sang Level2
+            SceneManager.LoadScene("Level 2"); // Chuyển sang Level2
             Destroy(gameObject); // Xóa chìa khóa sau khi thu thập
         }
     }
